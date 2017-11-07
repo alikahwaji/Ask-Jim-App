@@ -2,7 +2,7 @@ console.log('App js is the running')
 
 // JSX - JavaScript XML
 
-var template = <p>This is a test of JSX , dose it change</p>
+var template = <h1>This is a test of JSX</h1>
 var appRoot = document.getElementById('app')
 
 ReactDOM.render(template, appRoot)
