@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/alikahwaji/iExpense/issues"
   },
-  "homepage": "https://github.com/alikahwaji/iExpense#readme"
+  "homepage": "https://github.com/alikahwaji/iExpense#readme",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
 }
