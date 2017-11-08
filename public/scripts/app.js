@@ -1,84 +1,32 @@
 'use strict';
 
-console.log('App js is the running');
+var nameVar = 'Ali';
+var nameVar = 'Mike';
+console.log('nameVar', nameVar);
 
-// JSX - JavaScript XML
+var nameLet = 'Jan';
+nameLet = 'Jake';
+console.log('nameLet', nameLet);
 
-var app = {
-  title: 'Ask Jim',
-  subtitle: 'A friendly decision maker',
-  options: []
-};
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    app.title.toUpperCase()
-  ),
-  app.subtitle && React.createElement(
-    'p',
-    null,
-    app.subtitle
-  ),
-  app.options.length ? React.createElement(
-    'p',
-    null,
-    'Here are you options: ',
-    app.options
-  ) : React.createElement(
-    'p',
-    null,
-    'No options'
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'item one'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'item two'
-    )
-  )
-);
+var nameConst = 'Frank';
+console.log('nameConst', nameConst);
 
-var user = {
-  name: 'Mike',
-  age: 37
-};
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'Loction: ',
-      location,
-      ' '
-    );
-  }
+function getPetName() {
+  var petName = 'mimi';
+  return petName;
 }
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name ? user.name : 'Anonymous'
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    'Age: ' + user.age + '.'
-  ),
-  getLocation(user.location)
-);
 
-var appRoot = document.getElementById('app');
+var petName = getPetName();
+console.log(petName);
 
-ReactDOM.render(template, appRoot);
+// block scoping 
+
+var fullName = 'Ali Kahwaji';
+var firstName = void 0;
+
+if (fullName) {
+  firstName = fullName.split(' ')[0];
+  console.log(firstName);
+}
+
+console.log(firstName);
