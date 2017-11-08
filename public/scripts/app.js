@@ -15,15 +15,13 @@ var squareArrow = function squareArrow(x) {
 console.log('square =', square(4));
 console.log('squareArrow =', squareArrow(6));
 
-var fullName = 'Mike Tom';
-
-var firstName = function firstName() {
+var getFirstName = function getFirstName(fullName) {
   return fullName.split(' ')[0];
 };
 
-var lastName = function lastName() {
+var getLastName = function getLastName(fullName) {
   return fullName.split(' ')[1];
 };
 
-console.log('First Name :', firstName());
-console.log('Last Name :', lastName());
+console.log('First Name :', getFirstName('Suhair Chalabi'));
+console.log('Last Name :', getLastName('Ali Kahwaji'));

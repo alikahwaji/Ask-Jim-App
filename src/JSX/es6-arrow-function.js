@@ -11,13 +11,11 @@ const squareArrow = (x) => x * x
 console.log('square =', square(4))
 console.log('squareArrow =', squareArrow(6))
 
-const fullName = 'Mike Tom'
-
-const firstName = () => {
+const getFirstName = (fullName) => {
   return fullName.split(' ')[0]
 }
 
-const lastName = () => fullName.split(' ')[1]
+const getLastName = (fullName) => fullName.split(' ')[1]
 
-console.log('First Name :', firstName())
-console.log('Last Name :', lastName())
+console.log('First Name :', getFirstName('Suhair Chalabi'))
+console.log('Last Name :', getLastName('Ali Kahwaji'))
