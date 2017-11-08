@@ -4,35 +4,37 @@ console.log('App js is the running');
 
 // JSX - JavaScript XML
 
-var template = React.createElement(
+// var template = (
+//   <div>
+//     <h1>This is a test of JSX</h1>
+//     <p>This is some text</p>
+//     <ol>
+//       <li>item one</li>
+//       <li>item two</li>
+//     </ol>
+//   </div>
+// )
+
+var templateTwo = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'This is a test of JSX'
+    'Ali Kahwaji'
   ),
   React.createElement(
     'p',
     null,
-    'This is some text'
+    'Age: 37'
   ),
   React.createElement(
-    'ol',
+    'p',
     null,
-    React.createElement(
-      'li',
-      null,
-      'item one'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'item two'
-    )
+    'Location: Auckland'
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
