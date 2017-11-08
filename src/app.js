@@ -17,23 +17,22 @@ var template = (
   </div>
 )
 
-// var user = {
-//   name: 'Mike',
-//   age: 37,
-//   location: 'NZ'
-// }
-// var userName = 'ali'
-// var userAge = 30
-// var userLocation = 'Auckland'
+var user = {
+  name: 'Mike',
+  age: 37,
+  location: 'NZ'
+}
+function getLocation() {
 
-// var templateTwo = (
-//   <div>
-//     <h1>{user.name.toUpperCase()}</h1>
-//     <p>{`Age: ${user.age}.`}</p>
-//     <p>{`Location: ${user.location}.`}</p>
-//   </div>
-// )
+}
+var templateTwo = (
+  <div>
+    <h1>{user.name.toUpperCase()}</h1>
+    <p>{`Age: ${user.age}.`}</p>
+    <p>{`Location: ${getLocation()}.`}</p>
+  </div>
+)
 
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
