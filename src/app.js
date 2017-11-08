@@ -4,12 +4,14 @@ console.log('App js is the running')
 
 var app = {
   title: 'Ask Jim',
-  subtitle: 'A friendly decision maker'
+  subtitle: 'A friendly decision maker',
+  options: []
 }
 var template = (
   <div>
     <h1>{app.title.toUpperCase()}</h1>
-    <p>{app.subtitle}</p>
+    {app.subtitle && <p>{app.subtitle}</p>}
+    {app.options.length ? <p>Here are you options: {app.options}</p> : <p>No options</p>}
     <ol>
       <li>item one</li>
       <li>item two</li>
@@ -29,11 +31,11 @@ function getLocation(location) {
 var templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    <p>{`Age: ${user.age}.`}</p>
+    {(user.age && user.age >= 18) && <p>{`Age: ${user.age}.`}</p>}
     {getLocation(user.location)}
   </div>
 )
 
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
