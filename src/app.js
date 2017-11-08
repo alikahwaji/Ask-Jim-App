@@ -19,19 +19,16 @@ var template = (
 
 var user = {
   name: 'Mike',
-  age: 37,
-  location: 'NZ'
+  age: 37
 }
 function getLocation(location) {
   if (location) {
     return <p>Loction: {location} </p>
-  } else {
-    return 'Unknow'
-  }
+  } 
 }
 var templateTwo = (
   <div>
-    <h1>{user.name.toUpperCase()}</h1>
+    <h1>{user.name ? user.name : 'Anonymous'}</h1>
     <p>{`Age: ${user.age}.`}</p>
     {getLocation(user.location)}
   </div>

@@ -39,8 +39,7 @@ var template = React.createElement(
 
 var user = {
   name: 'Mike',
-  age: 37,
-  location: 'NZ'
+  age: 37
 };
 function getLocation(location) {
   if (location) {
@@ -51,8 +50,6 @@ function getLocation(location) {
       location,
       ' '
     );
-  } else {
-    return 'Unknow';
   }
 }
 var templateTwo = React.createElement(
@@ -61,7 +58,7 @@ var templateTwo = React.createElement(
   React.createElement(
     'h1',
     null,
-    user.name.toUpperCase()
+    user.name ? user.name : 'Anonymous'
   ),
   React.createElement(
     'p',
