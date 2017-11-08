@@ -42,7 +42,19 @@ var user = {
   age: 37,
   location: 'NZ'
 };
-function getLocation() {}
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      'p',
+      null,
+      'Loction: ',
+      location,
+      ' '
+    );
+  } else {
+    return 'Unknow';
+  }
+}
 var templateTwo = React.createElement(
   'div',
   null,
@@ -56,11 +68,7 @@ var templateTwo = React.createElement(
     null,
     'Age: ' + user.age + '.'
   ),
-  React.createElement(
-    'p',
-    null,
-    'Location: ' + getLocation() + '.'
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById('app');
