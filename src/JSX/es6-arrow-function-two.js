@@ -22,9 +22,9 @@ console.log(user.printPlacesLived())
 const multiplier = {
   numbers: [1, 2, 3, 4, 5, 6],
   multiplyBy: 2,
-  multiplied () {
+  multiply () {
     return this.numbers.map((number) => number * this.multiplyBy)
   }
 }
 
-console.log(multiplier.multiplied())
+console.log(multiplier.multiply())

@@ -28,7 +28,7 @@ console.log(user.printPlacesLived());
 var multiplier = {
   numbers: [1, 2, 3, 4, 5, 6],
   multiplyBy: 2,
-  multiplied: function multiplied() {
+  multiply: function multiply() {
     var _this2 = this;
 
     return this.numbers.map(function (number) {
@@ -37,4 +37,4 @@ var multiplier = {
   }
 };
 
-console.log(multiplier.multiplied());
+console.log(multiplier.multiply());
