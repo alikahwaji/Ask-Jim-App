@@ -7,42 +7,38 @@ const app = {
   subtitle: 'A friendly decision maker',
   options: []
 }
-const template = (
-  <div>
-    <h1>{app.title.toUpperCase()}</h1>
-    {app.subtitle && <p>{app.subtitle}</p>}
-    {app.options.length ? <p>Here are you options: {app.options}</p> : <p>No options</p>}
-    <ol>
-      <li>item one</li>
-      <li>item two</li>
-    </ol>
-  </div>
-)
-let count = 0
-const addOne = () => {
-  count++
-  renderCounterApp()
+const onFormSubmit = (e) => {
+  e.preventDefault()
+
+  const option = e.target.elements.option.value
+
+  if (option) {
+    app.options.push(option)
+    e.target.elements.option.value = ' '
+    renderApp()
+  }
 }
-const minusOne = () => {
-  count--
-  renderCounterApp()
-}
-const rest = () => {
-  count = 0
-  renderCounterApp()
-}
+
 const appRoot = document.getElementById('app')
 
-const renderCounterApp = () => {
-  const templateTwo = (
+const renderApp = () => {
+  const template = (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={addOne}>+1</button>
-      <button onClick={minusOne}>-1</button>
-      <button onClick={rest}>Reset</button>
+      <h1>{app.title.toUpperCase()}</h1>
+      {app.subtitle && <p>{app.subtitle}</p>}
+      {app.options.length ? <p>Here are you options: {app.options}</p> : <p>No options</p>}
+      <p>{app.options.length}</p>
+      <ol>
+        <li>item one</li>
+        <li>item two</li>
+      </ol>
+      <form onSubmit={onFormSubmit}>
+        <input type="text" name="option"/>
+        <button>Add option</button>
+      </form>
     </div>
   )
-  ReactDOM.render(templateTwo, appRoot)
+  ReactDOM.render(template, appRoot)
 }
 
-renderCounterApp()
+renderApp()
