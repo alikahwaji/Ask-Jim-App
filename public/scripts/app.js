@@ -1,27 +1,40 @@
 'use strict';
 
-var square = function square(x) {
-  return x * x;
+var add = function add(a, b) {
+  console.log(arguments);
+  return a + b;
 };
 
-// const squareArrow = (x) => {
-//   return x * x
-// }
+var addArrow = function addArrow(a, b) {
+  // console.log(arguments)
+  return a + b;
+};
+console.log('add =', add(5, 6));
+console.log('Add =', addArrow(4, 2));
 
-var squareArrow = function squareArrow(x) {
-  return x * x;
+var user = {
+  name: 'Mike',
+  cities: ['Dubai', 'KL', 'Auckland'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
+
+    return this.cities.map(function (city) {
+      return _this.name + ' has lived in ' + city + '!';
+    });
+  }
+};
+console.log(user.printPlacesLived());
+
+var multiplier = {
+  numbers: [1, 2, 3, 4, 5, 6],
+  multiplyBy: 2,
+  multiplied: function multiplied() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return number * _this2.multiplyBy;
+    });
+  }
 };
 
-console.log('square =', square(4));
-console.log('squareArrow =', squareArrow(6));
-
-var getFirstName = function getFirstName(fullName) {
-  return fullName.split(' ')[0];
-};
-
-var getLastName = function getLastName(fullName) {
-  return fullName.split(' ')[1];
-};
-
-console.log('First Name :', getFirstName('Suhair Chalabi'));
-console.log('Last Name :', getLastName('Ali Kahwaji'));
+console.log(multiplier.multiplied());
