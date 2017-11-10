@@ -26,6 +26,12 @@ var remove = function remove() {
   renderApp();
 };
 
+var makeDecision = function makeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  alert(option);
+};
+
 var appRoot = document.getElementById('app');
 
 var renderApp = function renderApp() {
@@ -52,9 +58,9 @@ var renderApp = function renderApp() {
       'No options'
     ),
     React.createElement(
-      'p',
-      null,
-      app.options.length
+      'button',
+      { disabled: app.options.length === 0, onClick: makeDecision },
+      'Hi Jim, what are we doing today?'
     ),
     React.createElement(
       'button',
