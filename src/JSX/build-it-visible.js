@@ -13,7 +13,7 @@ const render = () => {
       </button>
       {visibility && (
         <div>
-        <p>Here are some details</p>
+          <p>Here are some details</p>
         </div>
       )}
     </div>
