@@ -20,7 +20,7 @@ const onFormSubmit = (e) => {
 }
 
 const remove = () => {
-  app.options.length =[]
+  app.options.length = []
   renderApp()
 }
 
@@ -31,12 +31,15 @@ const renderApp = () => {
     <div>
       <h1>{app.title.toUpperCase()}</h1>
       {app.subtitle && <p>{app.subtitle}</p>}
-      {app.options.length ? <p>Here are you options: {app.options}</p> : <p>No options</p>}
+      {app.options.length ? <p>Here are you options: </p> : <p>No options</p>}
       <p>{app.options.length}</p>
       <button onClick={remove}>Remove All</button>
       <ol>
-        <li>item one</li>
-        <li>item two</li>
+        {
+          app.options.map((option) => {
+            return <li key={option}>{option}</li>
+          })
+        }
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option"/>

@@ -45,8 +45,7 @@ var renderApp = function renderApp() {
     app.options.length ? React.createElement(
       'p',
       null,
-      'Here are you options: ',
-      app.options
+      'Here are you options: '
     ) : React.createElement(
       'p',
       null,
@@ -65,16 +64,13 @@ var renderApp = function renderApp() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'item two'
-      )
+      app.options.map(function (option) {
+        return React.createElement(
+          'li',
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       'form',
