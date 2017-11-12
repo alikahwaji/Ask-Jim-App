@@ -8,7 +8,7 @@ class MainApp extends React.Component {
       <div>
         <Header title ={title} subtitle={subtitle}/>
         <Action />
-        <Options  options={options}/>
+        <Options options={options}/>
         <AddOption />
       </div>
     )
@@ -26,19 +26,26 @@ class Header extends React.Component {
   }
 }
 class Action extends React.Component {
+  handlePick () {
+    alert('HAndlePick')
+  }
   render () {
     return (
       <div>
-        <button>Hi Jim, what are we doing for today?</button>
+        <button onClick={this.handlePick}>Hi Jim, what are we doing for today?</button>
       </div>
     )
   }
 }
 
 class Options extends React.Component {
+  handleRemoveAll () {
+    alert('Remov All')
+  }
   render () {
     return (
       <div>
+        <button onClick={this.handleRemoveAll}>Remove All</button>
         {
           this.props.options.map((option) => <Option key={option} optionText={option}/>)
         }
@@ -48,10 +55,21 @@ class Options extends React.Component {
 }
 
 class AddOption extends React.Component {
+  handleAddOption (e) {
+    e.preventDefault()
+    const option = e.target.elements.option.value
+
+    if (option) {
+      alert(option)
+    }
+  }
   render () {
     return (
       <div>
-        <p> An adding button will be build here to add options</p>
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option" />
+          <button>Add Option</button>
+        </form>
       </div>
     )
   }
