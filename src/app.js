@@ -1,3 +1,4 @@
+
 class MainApp extends React.Component {
   render () {
     const title = 'ASK JIM'
@@ -39,8 +40,12 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleRemoveAll = this.handleRemoveAll.bind(this)
+  }
   handleRemoveAll () {
-    alert('Remov All')
+    console.log(this.props.options)
   }
   render () {
     return (
