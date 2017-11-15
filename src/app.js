@@ -12,7 +12,7 @@ class MainApp extends React.Component {
   handleDeleteOptions () {
     this.setState(() => {
       return {
-        options: []
+        options: props.options
       }
     })
   }
@@ -36,12 +36,11 @@ class MainApp extends React.Component {
     })
   }
   render () {
-    const title = 'ASK JIM'
     const subtitle = 'Confused what to do? let me help you'
 
     return (
       <div>
-        <Header title ={title} subtitle={subtitle}/>
+        <Header subtitle={subtitle}/>
         <Action
           hasOptions={this.state.options.length > 0}
           handlePick ={this.handlePick}
@@ -58,13 +57,20 @@ class MainApp extends React.Component {
   }
 }
 
+MainApp.defaultProps = {
+  options: []
+}
+
 const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
+      {props.subtitle && <h2>{props.subtitle}</h2>}
     </div>
   )
+}
+Header.defaultProps = {
+  title: 'ASK JIM'
 }
 const Action = (props) => {
   return (
@@ -125,7 +131,7 @@ class AddOption extends React.Component {
 const Option = (props) => {
   return (
     <div>
-      {this.props.optionText}
+      {props.optionText}
     </div>
   )
 }
