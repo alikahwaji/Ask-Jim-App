@@ -10,6 +10,16 @@ class MainApp extends React.Component {
       options: []
     }
   }
+  componentDidMount() {
+    console.log('Did Mount')
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component Update')
+  }
+  componentWillUnmount() {
+    console.log('Component unmount')
+  }
   handleDeleteOptions () {
     this.setState(() => ({ options: [] }))
   }

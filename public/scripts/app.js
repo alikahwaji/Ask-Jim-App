@@ -27,6 +27,21 @@ var MainApp = function (_React$Component) {
   }
 
   _createClass(MainApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('Did Mount');
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      console.log('Component Update');
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('Component unmount');
+    }
+  }, {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {
