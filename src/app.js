@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import AddOption from './components/AddOption'
+import Options from './components/Options'
+import Header from './components/Header'
+import Action from './components/Action'
 
 class MainApp extends React.Component {
   constructor (props) {
@@ -73,45 +76,6 @@ MainApp.defaultProps = {
   options: []
 }
 
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.title}</h1>
-      {props.subtitle && <h2>{props.subtitle}</h2>}
-    </div>
-  )
-}
-Header.defaultProps = {
-  title: 'ASK JIM'
-}
-const Action = (props) => {
-  return (
-    <div>
-      <button
-        onClick={props.handlePick}
-        disabled= {!props.hasOptions}
-      >
-        Hi Jim, what are we doing for today?</button>
-    </div>
-  )
-}
-
-const Options = (props) => {
-  return (
-    <div>
-      <button onClick={props.handleDeleteOptions}>Remove All</button>
-      {
-        props.options.map((option) => (
-          <Option 
-            key={option} 
-            optionText={option}
-            handleDeleteOption={props.handleDeleteOption}
-          />
-        ))
-      }
-    </div>
-  )
-}
 
 
 
