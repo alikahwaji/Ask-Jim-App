@@ -5,16 +5,10 @@ import Header from './Header'
 import Action from './Action'
 
 export default class MainApp extends React.Component {
-  constructor (props) {
-    super(props)
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
-    this.handlePick = this.handlePick.bind(this)
-    this.handleAddOption = this.handleAddOption.bind(this)
-    this.handleDeleteOption = this.handleDeleteOption.bind(this)
-    this.state = {
-      options: []
-    }
+  state = {
+    options: []
   }
+  
   componentDidMount() {
     console.log('Did Mount')
   }
@@ -25,22 +19,22 @@ export default class MainApp extends React.Component {
   componentWillUnmount() {
     console.log('Component unmount')
   }
-  handleDeleteOptions () {
+  handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }))
   }
 
-  handleDeleteOption (optionToRemove) {
+  handleDeleteOption = (optionToRemove) => {
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => optionToRemove !== option)
     }))
   }
-  handlePick () {
+  handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length)
     const option = this.state.options[randomNum]
     alert(option)
   }
 
-  handleAddOption (option) {
+  handleAddOption = (option) => {
     if (!option) {
       return 'Enter valid value to add'
     } else if (this.state.options.indexOf(option) > -1) {
