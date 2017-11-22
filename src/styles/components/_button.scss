@@ -1,0 +1,16 @@
+.big-button {
+  background: $off-green;
+  border: none;
+  border-bottom: .6rem solid darken($off-green, 10%);
+  color: white;
+  font-weight: bold;
+  font-size: $l-size;
+  margin-bottom: $xl-size;
+  padding: 2.4rem;
+  width: 100%;
+
+}
+
+.big-button:disabled {
+  opacity: .5;
+}
