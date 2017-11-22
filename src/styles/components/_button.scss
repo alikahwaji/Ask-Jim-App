@@ -14,3 +14,19 @@
 .big-button:disabled {
   opacity: .5;
 }
+
+.button {
+  background: $off-green;
+  border: none;
+  border-bottom: .3rem solid darken($off-green, 10%);
+  color: white;
+  font-weight: 500;
+  padding: $s-size;
+}
+
+.button--link {
+  background: none;
+  border: none;
+  color: $off-white;
+  padding: 0;
+}
