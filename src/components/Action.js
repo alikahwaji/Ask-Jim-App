@@ -7,7 +7,7 @@ const Action = (props) => (
       onClick={props.handlePick}
       disabled= {!props.hasOptions}
     >
-        Hi Jim, what are we doing for today?</button>
+        Hi Jim! What are we doing today?</button>
   </div>
 )
 

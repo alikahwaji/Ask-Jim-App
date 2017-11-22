@@ -46,14 +46,14 @@ export default class MainApp extends React.Component {
 
   handleAddOption = (option) => {
     if (!option) {
-      return 'Enter valid value to add'
+      return 'Sorry, type what you want to do'
     } else if (this.state.options.indexOf(option) > -1) {
       return ('This option already exists')
     }
     this.setState((prevState) => ({options: prevState.options.concat(option)}))
   }
   render () {
-    const subtitle = 'Confused what to do? let me help you'
+    const subtitle = 'Wondering what to do? Let me help you!'
 
     return (
       <div>
@@ -63,14 +63,16 @@ export default class MainApp extends React.Component {
           hasOptions={this.state.options.length > 0}
           handlePick ={this.handlePick}
         />
+        <div className='widget'>
         <Options
-          options={this.state.options}
-          handleDeleteOptions = {this.handleDeleteOptions}
-          handleDeleteOption = {this.handleDeleteOption}
+        options={this.state.options}
+        handleDeleteOptions = {this.handleDeleteOptions}
+        handleDeleteOption = {this.handleDeleteOption}
+      />
+      <AddOption
+        handleAddOption = {this.handleAddOption}
         />
-        <AddOption
-          handleAddOption = {this.handleAddOption}
-        />
+        </div>
         </div>
         <OptionModal
         selectedOption={this.state.selectedOption} 
