@@ -12,11 +12,22 @@ export default class MainApp extends React.Component {
   }
   
   componentDidMount() {
-    console.log('Did Mount')
+    try {
+      const json = localStorage.getItem('options')
+      const options = JSON.parse(json)
+      if(options){
+        this.setState(() => ({options}))
+      }  
+    } catch (e) {
+
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('Component Update')
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options)
+      localStorage.setItem('options', json)
+    }
   }
   componentWillUnmount() {
     console.log('Component unmount')
@@ -51,6 +62,7 @@ export default class MainApp extends React.Component {
       return ('This option already exists')
     }
     this.setState((prevState) => ({options: prevState.options.concat(option)}))
+    
   }
   render () {
     const subtitle = 'Wondering what to do? Let me help you!'
