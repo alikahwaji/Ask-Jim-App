@@ -1,8 +1,7 @@
-# iExpense
- On going  project 
+# Ask Jim
+ A front-end project using ReactJS@16 with babel plugins ans ES6 syntax 
 
  To run the app:
-
- yarn run serve 
- yarn run build
+ 
+ yarn run dev-server
  
