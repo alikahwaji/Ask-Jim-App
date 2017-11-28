@@ -1,5 +1,5 @@
 {
-  "name": "iExpense",
+  "name": "ASK-JIM-APP",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alikahwaji/iExpense.git"
+    "url": "https://github.com/alikahwaji/Ask-Jim-App.git"
   },
   "keywords": [],
   "author": "",
