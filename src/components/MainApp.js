@@ -13,7 +13,7 @@ export default class MainApp extends React.Component {
   
   componentDidMount() {
     try {
-      const json = localStorage.getItem('option')
+      const json = localStorage.getItem('options')
       const options = JSON.parse(json)
       if(options){
         this.setState(() => ({options}))
