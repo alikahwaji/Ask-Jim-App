@@ -11,3 +11,6 @@
  2- yarn run dev-server
 
 Enjoy!
+
+///////////////
+This app will be live soon 
