@@ -13,4 +13,4 @@
 Enjoy!
 
 ///////////////
-This app will be live soon 
+This app is a demo
