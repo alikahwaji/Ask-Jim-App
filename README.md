@@ -1,6 +1,6 @@
 # Ask Jim
 
- A front-end project using ReactJS@16, it helps with making decisions to select which activity you want to do during the day.
+ A front-end project using ReactJS@16, it helps with making decisions to select which activity you will be doing during the day.
  
  A fun simple and colorful app to use. 
 
